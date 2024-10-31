@@ -1,10 +1,10 @@
-const Navbar = () => {
+const Navbar = ({ image }) => {
   return (
     <div className="navbar">
-    <button>Home</button>
-    <button>About Us</button>
+      <h1>HomeMe</h1>
+      <img src={image} alt="house logo" className="logo" />
     </div>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

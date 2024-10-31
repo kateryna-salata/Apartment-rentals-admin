@@ -1,25 +1,23 @@
-import './App.css'
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Navbar from './components/Navbar'
-import logo from './assets/logo.png'
-import Preview from './components/Preview'
+import "./App.css";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import Sidebar from "./components/Sidebar";
+import logo from "./assets/logo.png";
+import Preview from "./components/Preview";
 
 function App() {
-  
-
   return (
     <>
-     <div className="App">
-      <Header image={logo}/>
-      <div className='centerSection'>
-      <Navbar/>        
-      <Preview/>
+      <div className="App">
+        <Navbar image={logo} />
+        <div className="centerSection">
+          <Sidebar />
+          <Preview />
+        </div>
+        <Footer />
       </div>
-      <Footer/>
-     </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

@@ -6,7 +6,7 @@
   background-color: rgb(255, 225, 0);
   opacity: 0.6;
 }
-.header {
+.navbar {
   width: 100vw;
   height: 15vh;
   display: flex;
@@ -18,7 +18,7 @@
 .logo {
   height: 150px
 }
-.navbar {
+.sidebar {
   display: flex;
   flex-direction: column;
   width: 20vw;
