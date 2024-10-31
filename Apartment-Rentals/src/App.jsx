@@ -3,7 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import logo from "./assets/logo.png";
-import Preview from "./components/Preview";
+import List from "./components/List";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Navbar image={logo} />
         <div className="centerSection">
           <Sidebar />
-          <Preview />
+          <List />
         </div>
         <Footer />
       </div>
