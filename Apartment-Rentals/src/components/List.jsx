@@ -9,7 +9,7 @@ const Preview = () => {
   return (
     <div className="list">
       {data.map((item) => (
-        <ListItem item={item} data={data} setData={setData} />
+        <ListItem item={item} data={data} setData={setData} key={item.id}/>
       ))}
     </div>
   );
