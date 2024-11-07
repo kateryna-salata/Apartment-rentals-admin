@@ -17,7 +17,12 @@ export const ListItem = ({ item, data, setData }) => {
           </Link>
           <p>{item.host_location}</p>
 
-          <button onClick={() => handleDelete(item.id)}>Delete</button>
+          <button
+            className="btn delete-btn"
+            onClick={() => handleDelete(item.id)}
+          >
+            Delete
+          </button>
         </div>
       </div>
     </div>
