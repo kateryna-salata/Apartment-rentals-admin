@@ -46,7 +46,9 @@
 }
 
 .list {
-  width: 70vw;
+  width: 80vw;
+  overflow: scroll;
+  height: 70vh;
 }
 
 .btn {
