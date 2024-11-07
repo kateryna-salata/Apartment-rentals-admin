@@ -17,14 +17,16 @@ function App() {
       <div className="App">
         <Navbar image={logo} />
         <div className="centerSection">
-        <Sidebar/>
+          <Sidebar />
           <Routes>
-            <Route path="/" element={<DashBoardPage />} />
-            <Route path="/details/:cardId" element={<ItemDetailsPage />} />
+            <Route path="/" element={<DashBoardPage listings={listings} />} />
+            <Route
+              path="/details/:cardId"
+              element={<ItemDetailsPage listings={listings} />}
+            />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
-          
         </div>
         <Footer />
       </div>

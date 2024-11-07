@@ -1,11 +1,11 @@
 import List from "../components/List";
 
-const DashBoardPage = () => {
+const DashBoardPage = ({ listings }) => {
   return (
     <div>
-      <List/>
+      <List listings={listings} />
     </div>
-  )
-}
+  );
+};
 
-export default DashBoardPage
+export default DashBoardPage;
