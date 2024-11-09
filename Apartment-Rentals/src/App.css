@@ -5,6 +5,7 @@
   width: 100vw;
   opacity: 0.6;
 }
+
 .navbar {
   width: 100vw;
   height: 10vh;
@@ -13,17 +14,18 @@
   align-items: center;
   padding: 0 15px;
   margin-bottom: 15px;
-  margin-top: -50px;
+  margin-top: -140px;
   background-color: rgba(120, 157, 188, 0.5);
 }
 
 .logo {
   height: 150px;
 }
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  width: 15vw;
   height: 70vh;
   margin-left: 10px;
 }
@@ -33,14 +35,13 @@
   justify-content: center;
   align-items: center;
   width: 100vw;
-  height: 15vh;
+  height: 5vh;
   font-size: 2em;
   color: white;
 }
 
 .centerSection {
   display: flex;
-  justify-content: space-between;
   height: 70vh;
   width: 100vw;
 }
@@ -73,25 +74,101 @@
 .card img {
   width: 40%;
   margin: 15px;
-  border-radius: 15px;
 }
 
 .card {
   display: flex;
   width: 800px;
   align-items: flex-start;
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: rgb(255, 227, 227);
   margin: 10px;
   border-radius: 15px;
 }
 
 .text {
+  /*card-text*/
   margin-left: 15px;
 }
 
 .super {
   display: inline;
+}
+
+/* itemdetails */
+.details-wrapper {
+  width: 80%;
+  margin: 0 20px;
+}
+.descr-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.details-img {
+  width: 50%;
+  margin-right: 10px;
+}
+
+.header-details {
+  text-align: center;
+}
+
+/* about */
+
+.about-wrapper {
+  text-align: center;
+  width: 80vw;
+  font-size: 20px;
+}
+.about-box {
+  display: flex;
+  /* background-color: rgba(96, 96, 141, 0.582); */
+  justify-content: center;
+}
+
+.about-text {
+  padding: 20px;
+  text-align: left;
+}
+
+.dev-card-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.dev-card {
+  width: 220px;
+  margin-top: 0;
+  margin-bottom: 30px;
+  padding-left: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dev-card a {
+  padding: 8px;
+}
+/* NOTFOUND */
+
+.not-found {
+  margin: auto;
+  padding: 50px 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  width: fit-content;
+}
+
+.not-found a {
+  text-decoration: solid;
+  color: rgb(120, 157, 188);
+}
+
+.not-found img {
+  margin-bottom: 20px;
 }
 
 .form {
