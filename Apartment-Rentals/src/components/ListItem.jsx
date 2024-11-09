@@ -16,7 +16,7 @@ export const ListItem = ({ item, data, setData }) => {
             </h2>
           </Link>
           <p>{item.host_location}</p>
-
+          <p>{item.price}</p>
           <button
             className="btn delete-btn"
             onClick={() => handleDelete(item.id)}
