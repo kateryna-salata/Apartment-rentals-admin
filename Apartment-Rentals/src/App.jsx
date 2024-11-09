@@ -12,6 +12,7 @@ import AboutPage from "./Pages/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 
 function App() {
+  const [data, setData] = useState(listings);
   return (
     <>
       <div className="App">
@@ -19,7 +20,7 @@ function App() {
         <div className="centerSection">
           <Sidebar />
           <Routes>
-            <Route path="/" element={<DashBoardPage listings={listings} />} />
+            <Route path="/" element={<DashBoardPage listings={listings} data={data} setData={setData} />} />
             <Route
               path="/details/:cardId"
               element={<ItemDetailsPage listings={listings} />}

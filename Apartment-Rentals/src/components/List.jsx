@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ListItem } from "./ListItem";
 
-const Preview = ({ listings }) => {
-  const [data, setData] = useState(listings);
+const Preview = ({ listings, data, setData }) => {
+  
 
   console.log(data);
   return (
