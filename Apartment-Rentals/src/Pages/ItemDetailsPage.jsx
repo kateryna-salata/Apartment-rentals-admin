@@ -1,13 +1,12 @@
-import { useParams } from "react-router-dom";
-import EditForm from "../components/EditForm";
+import { Link, useParams } from "react-router-dom";
+import EditForm from "./EditForm";
 import { useState } from "react";
 
-const ItemDetailsPage = ({ listings }) => {
+const ItemDetailsPage = ({ listings, data, setData }) => {
   const { cardId } = useParams();
-  const foundItem = listings.find((item) => item.id == cardId);
+  const foundItem = data.find((item) => item.id == cardId);
   if (!foundItem) return <p>Item not found</p>;
-
-  const [editItem, setEditItem] = useState(foundItem);
+ 
 
   return (
     <div className="details-wrapper">
@@ -15,6 +14,9 @@ const ItemDetailsPage = ({ listings }) => {
       <div className="descr-box">
         <img className="details-img" src={foundItem.picture_url}></img>
         <p>{foundItem.description}</p>
+        <Link to={`/details/update/${foundItem.id}`}>
+          <button>Edit Details</button>
+        </Link>
       </div>
       <p>{foundItem.host_location}</p>
       <p>Price: {foundItem.price}</p>
@@ -32,7 +34,7 @@ const ItemDetailsPage = ({ listings }) => {
         </ul>
       </div>
       <p>{foundItem.description}</p>
-      <EditForm editItem={editItem} setEditItem={setEditItem}/>
+      
     </div>
   );
 };

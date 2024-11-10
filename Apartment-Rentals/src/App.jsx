@@ -10,9 +10,18 @@ import DashBoardPage from "./Pages/DashBoardPage";
 import ItemDetailsPage from "./Pages/ItemDetailsPage";
 import AboutPage from "./Pages/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage";
+import EditForm from "./Pages/EditForm";
 
 function App() {
   const [data, setData] = useState(listings);
+
+  function handleUpdateItem(updatedItem) {
+    setData((data) =>
+      data.map((item) => {
+        item.id === updatedItem.id ? updatedItem : item;
+      })
+    );
+  }
   return (
     <>
       <div className="App">
@@ -20,13 +29,20 @@ function App() {
         <div className="centerSection">
           <Sidebar />
           <Routes>
-            <Route path="/" element={<DashBoardPage listings={listings} data={data} setData={setData} />} />
+            <Route
+              path="/"
+              element={<DashBoardPage data={data} setData={setData} />}
+            />
             <Route
               path="/details/:cardId"
-              element={<ItemDetailsPage listings={listings} />}
+              element={<ItemDetailsPage data={data} setData={setData} />}
             />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<NotFoundPage />} />
+            <Route
+              path="/details/update/:cardId"
+              element={<EditForm data={data} setData={setData} onUpdate={handleUpdateItem}/>}
+            />
           </Routes>
         </div>
         <Footer />

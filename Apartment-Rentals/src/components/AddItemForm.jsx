@@ -78,8 +78,8 @@ const AddItemForm = ({ listings, data, setData }) => {
             onChange={handleChange}
           />
         </label>
-      </div>
       <button>Add List Item</button>
+      </div>
     </form>
   );
 };

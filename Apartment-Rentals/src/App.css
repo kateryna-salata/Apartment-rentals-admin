@@ -1,7 +1,6 @@
 #App {
   margin: 0;
-  padding: 0;
-  height: 100vh;
+  padding: 0;  
   width: 100vw;
   opacity: 0.6;
 }
@@ -171,7 +170,9 @@
   margin-bottom: 20px;
 }
 
-.form {
+.form { 
+  display: flex;
+  flex-direction: column;
   text-align: center;
   border-radius: 15px;
   border: 0.5px solid black;
