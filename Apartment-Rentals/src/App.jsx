@@ -41,7 +41,13 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
             <Route
               path="/details/update/:cardId"
-              element={<EditForm data={data} setData={setData} onUpdate={handleUpdateItem}/>}
+              element={
+                <EditForm
+                  data={data}
+                  setData={setData}
+                  onUpdate={handleUpdateItem}
+                />
+              }
             />
           </Routes>
         </div>
