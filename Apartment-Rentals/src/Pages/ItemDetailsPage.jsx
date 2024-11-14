@@ -18,12 +18,12 @@ const ItemDetailsPage = ({ listings, data, setData }) => {
         <div className="descr-box">
           <img className="details-img" src={foundItem.picture_url}></img>
           <div className="description">
-            <p>Price: {foundItem.price}</p>
-            <p>{foundItem.host_location}</p>
-            <p>Bedrooms: {foundItem.bedrooms}</p>
-            <p>Battrooms: {foundItem.bathrooms}</p>
-            <p>Guests: {foundItem.accommodates}</p>
-            <p>Beds: {foundItem.beds}</p>
+            {foundItem.price && <p>Price: {foundItem.price}</p>}
+            {foundItem.host_location && <p>{foundItem.host_location}</p>}
+            {foundItem.bedrooms && <p>Bedrooms: {foundItem.bedrooms}</p>}
+            {foundItem.bathrooms && <p>Bathrooms: {foundItem.bathrooms}</p>}
+            {foundItem.accommodates && <p>Guests: {foundItem.accommodates}</p>}
+            {foundItem.beds && <p>Beds: {foundItem.beds}</p>}
             <Link to={`/details/update/${foundItem.id}`}>
               <button className="btn">Edit Details</button>
             </Link>
@@ -31,12 +31,16 @@ const ItemDetailsPage = ({ listings, data, setData }) => {
         </div>
         <p>{foundItem.description}</p>
         <div>
-          <h3 className="header-details">Amenities:</h3>
-          <ul className="amenities">
-            {foundItem.amenities.map((amenity, i) => (
-              <li key={i}>{amenity}</li>
-            ))}
-          </ul>
+          {foundItem.amenities && (
+            <>
+              <h3 className="header-details">Amenities:</h3>
+              <ul className="amenities">
+                {foundItem.amenities.map((amenity, i) => (
+                  <li key={i}>{amenity}</li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
       </div>
     </>
