@@ -29,10 +29,7 @@ function App() {
         <div className="centerSection">
           <Sidebar />
           <Routes>
-            <Route
-              path="/"
-              element={<DashBoardPage data={data} setData={setData} />}
-            />
+            <Route path="/" element={<DashBoardPage data={data} setData={setData} />} />
             <Route
               path="/details/:cardId"
               element={<ItemDetailsPage data={data} setData={setData} />}
@@ -41,13 +38,7 @@ function App() {
             <Route path="*" element={<NotFoundPage />} />
             <Route
               path="/details/update/:cardId"
-              element={
-                <EditForm
-                  data={data}
-                  setData={setData}
-                  onUpdate={handleUpdateItem}
-                />
-              }
+              element={<EditForm data={data} setData={setData} onUpdate={handleUpdateItem} />}
             />
           </Routes>
         </div>

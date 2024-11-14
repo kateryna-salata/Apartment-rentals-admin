@@ -6,7 +6,7 @@ export const ListItem = ({ item, data, setData }) => {
   }
   const isSuperHost = item.host_is_superhost;
   return (
-    <div>
+    <>
       <div className="card" key={item.id}>
         <img src={item.picture_url} alt="" />
         <div className="text">
@@ -17,14 +17,11 @@ export const ListItem = ({ item, data, setData }) => {
           </Link>
           <p>{item.host_location}</p>
           <p>{item.price}</p>
-          <button
-            className="btn delete-btn"
-            onClick={() => handleDelete(item.id)}
-          >
+          <button className="btn delete-btn" onClick={() => handleDelete(item.id)}>
             Delete
           </button>
         </div>
       </div>
-    </div>
+    </>
   );
 };
