@@ -18,7 +18,14 @@ function App() {
   function handleUpdateItem(updatedItem) {
     setData((data) =>
       data.map((item) => {
-        item.id === updatedItem.id ? updatedItem : item;
+        if (item.id !== updatedItem.id) return item;
+        else {
+          item.name = updatedItem.name;
+          item.picture_url = updatedItem.picture_url;
+          item.host_location = updatedItem.host_location;
+          item.description = updatedItem.description;
+          return item;
+        }
       })
     );
   }

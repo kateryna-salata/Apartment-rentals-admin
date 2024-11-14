@@ -1,13 +1,22 @@
-import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useParams, useNavigate } from "react-router-dom";
 
 const EditForm = ({ data, setData, onUpdate }) => {
   const { cardId } = useParams();
+  const navigate = useNavigate(); // Initialize useNavigate
   const foundItem = data.find((item) => item.id == cardId);
-  const [newName, setNewName] = useState(foundItem.name);
-  const [location, setLocation] = useState(foundItem.host_location);
-  const [description, setDescription] = useState(foundItem.description);
-  const [image, setImage] = useState(foundItem.picture_url);
+
+  // Provide fallback values for undefined or null properties
+  const initialName = foundItem && foundItem.name ? foundItem.name : "";
+  const initialLocation = foundItem && foundItem.host_location ? foundItem.host_location : "";
+  const initialDescription = foundItem && foundItem.description ? foundItem.description : "";
+  const initialImage = foundItem && foundItem.picture_url ? foundItem.picture_url : "";
+
+  // Initialize state
+  const [newName, setNewName] = useState(initialName);
+  const [location, setLocation] = useState(initialLocation);
+  const [description, setDescription] = useState(initialDescription);
+  const [image, setImage] = useState(initialImage);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -21,6 +30,8 @@ const EditForm = ({ data, setData, onUpdate }) => {
 
     onUpdate(updatedItem);
 
+    navigate(`/details/${foundItem.id}`);
+
     setDescription("");
     setImage("");
     setNewName("");
@@ -28,7 +39,8 @@ const EditForm = ({ data, setData, onUpdate }) => {
   }
 
   function handleChange(e) {
-    if (!e.target.value) return;
+    // console.log("Event", e, "name:", e.target.name, "value:", e.target.value);
+    // if (!e.target.value) return;
 
     if (e.target.name === "image") {
       setImage(e.target.value);
@@ -44,45 +56,26 @@ const EditForm = ({ data, setData, onUpdate }) => {
     <form onSubmit={handleSubmit} className="form">
       <div>
         <label>
-          Image:
-          <input
-            type="url"
-            name="image"
-            value={image}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
           Name:
-          <input
-            type="text"
-            name="name"
-            value={newName}
-            onChange={handleChange}
-          />
+          <input type="text" name="name" value={newName} onChange={handleChange} />
         </label>
         <label>
           Location:
-          <input
-            type="text"
-            name="location"
-            value={location}
-            onChange={handleChange}
-          />
+          <input type="text" name="location" value={location} onChange={handleChange} />
+        </label>
+        <label>
+          Image:
+          <input type="url" name="image" value={image} onChange={handleChange} />
         </label>
       </div>
       <div>
         <label>
           Description:
-          <textarea
-            name="description"
-            value={description}
-            onChange={handleChange}
-          />
+          <textarea name="description" value={description} onChange={handleChange} />
         </label>
-        <Link to={"/"}>
-          <button>Apply Changes</button>
-        </Link>
+        {/* <Link to={"/"}> */}
+        <button type="submit">Apply Changes</button>
+        {/* </Link> */}
       </div>
     </form>
   );
