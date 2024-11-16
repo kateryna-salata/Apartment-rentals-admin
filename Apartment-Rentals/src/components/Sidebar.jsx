@@ -1,5 +1,6 @@
 import {Link} from 'react-router-dom'
-const Sidebar = () => {
+import Filter from './Filter';
+const Sidebar = ({data, setData}) => {
   return (
     <div className="sidebar">
       <Link to="/" className='btn'>      
@@ -7,6 +8,9 @@ const Sidebar = () => {
       </Link>
       <Link to="/about" className='btn'>
       About Us
+      </Link>
+      <Link to="/filters" className='btn'>
+        Filters
       </Link>
     </div>
   );

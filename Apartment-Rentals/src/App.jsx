@@ -11,9 +11,11 @@ import ItemDetailsPage from "./Pages/ItemDetailsPage";
 import AboutPage from "./Pages/AboutPage";
 import NotFoundPage from "./Pages/NotFoundPage";
 import EditForm from "./Pages/EditForm";
+import FiltersPage from "./Pages/FiltersPage";
 
 function App() {
   const [data, setData] = useState(listings);
+  const [originalData, setOriginalData] = useState(listings)
 
   function handleUpdateItem(updatedItem) {
     setData((data) =>
@@ -34,7 +36,7 @@ function App() {
       <div className="App">
         <Navbar image={logo} />
         <div className="centerSection">
-          <Sidebar />
+          <Sidebar originalData={originalData} setOriginalData={setOriginalData} />
           <Routes>
             <Route path="/" element={<DashBoardPage data={data} setData={setData} />} />
             <Route
@@ -47,6 +49,7 @@ function App() {
               path="/details/update/:cardId"
               element={<EditForm data={data} setData={setData} onUpdate={handleUpdateItem} />}
             />
+            <Route path="/filters" element={<FiltersPage originalData={originalData} setOriginalData={setOriginalData}/>} />
           </Routes>
         </div>
         <Footer />
