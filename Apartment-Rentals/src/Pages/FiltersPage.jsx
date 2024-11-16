@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const FiltersPage = ({ originalData, setOriginalData }) => {
-  const [superUser , setSuperUser ] = useState(false);
+  const [superUser, setSuperUser] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState("all");
   const [filteredData, setFilteredData] = useState(originalData);
   useEffect(() => {
@@ -20,22 +20,22 @@ const FiltersPage = ({ originalData, setOriginalData }) => {
     };
   }, []); // Empty dependency array ensures it only runs on mount/unmount
 
-
   useEffect(() => {
     // Filter the original data based on the selected filters
-    const filtered = originalData.filter(item => {
+    const filtered = originalData.filter((item) => {
       const isSuperHost = item.host_is_superhost;
-      const locationMatch = selectedLocation === "all" || item.host_location === selectedLocation;
+      const locationMatch =
+        selectedLocation === "all" || item.host_location === selectedLocation;
 
-      return (!superUser  || isSuperHost) && locationMatch;
+      return (!superUser || isSuperHost) && locationMatch;
     });
 
     setFilteredData(filtered);
-  }, [superUser , selectedLocation, originalData]);
+  }, [superUser, selectedLocation, originalData]);
 
   function handleChange(e) {
     if (e.target.name === "superuser") {
-      setSuperUser (e.target.checked);
+      setSuperUser(e.target.checked);
     }
   }
 
@@ -48,15 +48,26 @@ const FiltersPage = ({ originalData, setOriginalData }) => {
       <h2>Apply your Filters Here</h2>
       <div>
         <label>
-          <input type="checkbox" name="superuser" checked={superUser } onChange={handleChange} />
+          <input
+            type="checkbox"
+            name="superuser"
+            checked={superUser}
+            onChange={handleChange}
+          />
           Super User
         </label>
         <label className="locationLabel">
-        Select Location
-          <select name="location" value={selectedLocation} onChange={handleLocationChange}>
+          Select Location
+          <select
+            name="location"
+            value={selectedLocation}
+            onChange={handleLocationChange}
+          >
             <option value="all">All</option>
             <option value="Madrid, Spain">Madrid, Spain</option>
-            <option value="Neuchatel, Switzerland">Neuchatel, Switzerland</option>
+            <option value="Neuchatel, Switzerland">
+              Neuchatel, Switzerland
+            </option>
             <option value="Peniscola, Spain">Peniscola, Spain</option>
             <option value="United States">United States</option>
             <option value="Miami Beach, FL">Miami Beach, FL</option>
@@ -74,13 +85,20 @@ const FiltersPage = ({ originalData, setOriginalData }) => {
               <div className="text">
                 <Link to={`/details/${item.id}`}>
                   <h2>
-                    {item.name} {isSuperHost ? <div className="super">⭐</div> : null}
+                    {item.name}{" "}
+                    {isSuperHost ? <div className="super">⭐</div> : null}
                   </h2>
                 </Link>
                 <p>{item.host_location}</p>
                 <p>{item.price}</p>
-                <button className="btn delete-btn" onClick={() => handleDelete(item.id)}>
+                <button
+                  className="btn delete-btn"
+                  onClick={() => handleDelete(item.id)}
+                >
                   Delete
+                </button>
+                <button className="fav-btn" onClick={() => handleFav(item.id)}>
+                  {item.isFav ? "❤️" : "🤍"}
                 </button>
               </div>
             </div>
