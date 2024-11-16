@@ -43,6 +43,18 @@ const FiltersPage = ({ originalData, setOriginalData }) => {
     setSelectedLocation(e.target.value);
   }
 
+  const handleFav = (id) => {
+    const updatedData = originalData.map((e) => (e.id === id ? { ...e, isFav: !e.isFav } : e));
+
+    setOriginalData(updatedData)
+    setFilteredData(updatedData.filter((item) => {
+      const isSuperHost = item.host_is_superhost;
+      const locationMatch = selectedLocation === "all" || item.host_location === selectedLocation;
+      return (!superUser || isSuperHost) && locationMatch;
+    }))
+    // Update the state to reflect the change
+  };
+
   return (
     <div className="main-section">
       <h2>Apply your Filters Here</h2>
@@ -80,7 +92,7 @@ const FiltersPage = ({ originalData, setOriginalData }) => {
         {filteredData.map((item) => {
           const isSuperHost = item.host_is_superhost;
           return (
-            <div className="card" key={item.id}>
+            <div className={`card ${item.isFav ? "isFav" : ""}`} key={item.id}>
               <img src={item.picture_url} alt="" />
               <div className="text">
                 <Link to={`/details/${item.id}`}>
