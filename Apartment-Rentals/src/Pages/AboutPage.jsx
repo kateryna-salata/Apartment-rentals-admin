@@ -46,7 +46,7 @@ const AboutPage = () => {
             <div className="card dev-card">
               <h3>Hernani Silva</h3>
               <div>
-                <a href="http://www.linkedin.com/in/hernani-silva-560a7b272">
+                <a href="https://www.linkedin.com/in/hernani-silva-560a7b272">
                   LinkedIn
                 </a>
                 <a href="https://github.com/hcs-silva">GitHub</a>
@@ -55,7 +55,7 @@ const AboutPage = () => {
             <div className="card dev-card">
               <h3>Kateryna Salata</h3>
               <div>
-                <a href="www.linkedin.com/in/kateryna-salata-a54b111aa">
+                <a href="https://www.linkedin.com/in/kateryna-salata-a54b111aa">
                   LinkedIn
                 </a>
                 <a href="https://github.com/kateryna-salata">GitHub</a>
