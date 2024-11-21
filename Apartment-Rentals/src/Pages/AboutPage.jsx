@@ -15,27 +15,20 @@ const AboutPage = () => {
             dashboard offers a streamlined experience, enabling ease of
             navigation and efficiency in daily tasks. Each feature is
             thoughtfully integrated to enhance the overall user experience,
-            allowing administrators to effortlessly update, delete, or highlight
+            allowing administrator to effortlessly update, delete, or highlight
             apartment listings. The bookmarking system is a powerful tool that
-            transforms the way properties are managed. It provides admins with a
+            transforms the way properties are managed. It provides admin with a
             personalized workspace where their favorite properties are a click
             away, ensuring that critical listings are never overlooked and can
-            be actioned swiftly. Beyond managing property data, our platform
-            includes integrated analytics that helps administrators make
-            informed decisions. The visual representation of data trends and
-            insights offer a deeper understanding of market dynamics and
-            property performance, empowering admins with the knowledge to
-            optimize their operations. Moreover, our commitment to security
-            ensures that all data processed through the platform is safeguarded
-            with the highest standards of protection, ensuring peace of mind for
-            all users. This secure environment supports multi-user access,
-            allowing team collaboration while maintaining data integrity. In
-            summary, our Intuitive Rental Oversight platform is more than just a
-            management tool—it's a strategic partner in enhancing property
-            oversight and administration. Whether you're monitoring real-time
-            updates, customizing property views, or navigating the dashboard,
-            our platform elevates the rental management experience to new
-            heights.
+            be actioned swiftly. Moreover, our commitment to security ensures
+            that all data processed through the platform is safeguarded with the
+            highest standards of protection, ensuring peace of mind for all
+            users. In summary, our Intuitive Rental Oversight platform is more
+            than just a management tool—it's a strategic partner in enhancing
+            property oversight and administration. Whether you're monitoring
+            real-time updates, customizing property views, or navigating the
+            dashboard, our platform elevates the rental management experience to
+            new heights.
           </p>
         </div>
         <div>
